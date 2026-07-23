@@ -77,7 +77,9 @@ log "============================================================"
 
 # YOUR CODE HERE: 
 
-useradd -r -s /usr/sbin/nologin webservice
+useradd -r -s /usr/sbin/nologin -d /var/lib/webservice -m webservice
+
+
 #should not have interactive log indue to it usually having permissions needed for an application to function.
 #attackers get the password, now they have access to files, logs, etc.
 log "Section 1 complete"
