@@ -251,7 +251,7 @@ crontab -e
 #    echo adds your new job
 #    crontab - installs the combined file
 
-(crontab -l 2>/dev/null; echo "0 2 * * 0 /usr/sbin/logrotate /etc/logrotate.conf") | crontab -
+0 2 * * 0 /usr/sbin/logrotate /etc/logrotate.conf
 #verify
 crontab -l
 
