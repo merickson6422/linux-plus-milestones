@@ -2,8 +2,8 @@
 # ============================================================
 # Linux+ Milestone 2 — Server Deployment Script
 #
-# Student:     [YOUR FULL NAME]
-# Date:        [DATE]
+# Student:     Melanie Erickson
+# Date:        07/23/2026
 # Environment: Ubuntu 22.04 container (Docker)
 # Scenario:    Deploy and harden a web server role
 #
@@ -75,7 +75,9 @@ log "============================================================"
 # HINT: Look up: useradd --help or man useradd
 #       Key flags: -r (system account), -s (shell), -d (home directory), -m (create home)
 
-# YOUR CODE HERE:
+# YOUR CODE HERE: 
+
+useradd -r -s /usr/sbin/nologin webservice
 
 
 log "Section 1 complete"
@@ -102,7 +104,14 @@ log "Section 1 complete"
 #         - Why should "other" not have write permission on a web root?
 #         - What is the numeric permission value you chose and why?
 
-# YOUR CODE HERE:
+# YOUR CODE HERE: 
+mkdir -p /var/www/html
+chown webservice:webservice /var/www/html
+chmod 755 /var/www/html
+echo "<h1>Welcome to Web Service</h1>" > /var/www/html/index.html
+chown webservice:webservice /var/www/html/index.html
+#    - Verify 
+ls -ld /var/www/html
 
 
 log "Section 2 complete"
@@ -126,7 +135,9 @@ log "Section 2 complete"
 #         - What does verifying the exit code protect against?
 
 # YOUR CODE HERE:
+apt-get update
 
+apt-get install -y apache2
 
 log "Section 3 complete"
 
