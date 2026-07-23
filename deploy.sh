@@ -165,7 +165,9 @@ log "Section 3 complete"
 #         - Why does systemctl behave differently in a container vs. a real server?
 
 # YOUR CODE HERE:
+systemctl enable apache2
 
+systemctl start apache2
 
 log "Section 4 complete"
 
@@ -189,7 +191,17 @@ log "Section 4 complete"
 #       ufw allow PORT/PROTOCOL, then ufw --force enable
 
 # YOUR CODE HERE:
-
+#install ufw
+apt-get update
+apt-get install -y ufw
+#allow inbound by port 80 http
+ufw allow 80/tcp
+#allow inbound by port 443 https
+ufw allow 443/tcp
+#enable firewall
+ufw --force enable
+#verify
+ufw status verbose
 
 log "Section 5 complete"
 
@@ -216,6 +228,11 @@ log "Section 5 complete"
 #       (crontab -l 2>/dev/null; echo "0 2 * * 0 /usr/sbin/logrotate /etc/logrotate.conf") | crontab -
 
 # YOUR CODE HERE:
+crontab -e
+#add logrotate entry without overwriting
+(crontab -l 2>/dev/null; echo "0 2 * * 0 /usr/sbin/logrotate /etc/logrotate.conf") | crontab -
+#verify
+crontab -l
 
 
 log "Section 6 complete"
