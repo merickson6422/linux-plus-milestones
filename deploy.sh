@@ -177,6 +177,12 @@ systemctl enable apache2
 
 systemctl start apache2
 
+
+#system enable is to start the service on boot
+#system start starts it immediately 
+#systemctl status <service-name> would be run to check the status of a service
+#the two behave differently because docker containers dont fun Linux in full and servers will.
+# recieved bash: docker: command not found
 log "Section 4 complete"
 
 
