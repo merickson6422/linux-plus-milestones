@@ -230,6 +230,11 @@ log "Section 5 complete"
 # YOUR CODE HERE:
 crontab -e
 #add logrotate entry without overwriting
+#    crontab -l gets existing root cron jobs
+#    2>/dev/null hides the "no crontab" error if none exist
+#    echo adds your new job
+#    crontab - installs the combined file
+
 (crontab -l 2>/dev/null; echo "0 2 * * 0 /usr/sbin/logrotate /etc/logrotate.conf") | crontab -
 #verify
 crontab -l
