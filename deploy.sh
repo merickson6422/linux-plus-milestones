@@ -233,7 +233,7 @@ log "Section 5 complete"
 #
 # TODO: Log a confirmation that the cron entry was added
 #
-# TODO: Add comments explaining:
+# TODO: Add comments explaining: 
 #         - What happens if log rotation is never configured?
 #         - What does each field in the cron expression mean?
 #         - What is /etc/logrotate.conf and what does it control?
