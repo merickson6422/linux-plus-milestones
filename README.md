@@ -1,6 +1,6 @@
 # Linux+ XK0-006 Milestones
 
-**Student:** [YOUR FULL NAME]
+**Student:** Melanie Erickson
 **Course:** CompTIA Linux+ XK0-006 — FastForward Track
 **Year:** 2025–2026
 
