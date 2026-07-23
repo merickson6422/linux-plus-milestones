@@ -78,8 +78,8 @@ log "============================================================"
 # YOUR CODE HERE: 
 
 useradd -r -s /usr/sbin/nologin webservice
-
-
+#should not have interactive log indue to it usually having permissions needed for an application to function.
+#attackers get the password, now they have access to files, logs, etc.
 log "Section 1 complete"
 
 
@@ -114,6 +114,12 @@ chown webservice:webservice /var/www/html/index.html
 ls -ld /var/www/html
 
 
+#ovwer has rwx (read, write, execute)
+#group and other has r and x (read and execute)
+#others should have the ability to write because they should have access to edit or modify files or applications
+#need to know 
+#755 is the numeric permissions i set because it 7 is for the owner have the read(4) write(2) and execute(1)
+#group and others read(4) and execute (1) giving 5 
 log "Section 2 complete"
 
 
@@ -138,6 +144,8 @@ log "Section 2 complete"
 apt-get update
 
 apt-get install -y apache2
+
+
 
 log "Section 3 complete"
 
